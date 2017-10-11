@@ -80,7 +80,7 @@ class Portfolio extends Component {
             </GridList>
           </div>
           <div style={styles.slide}>
-            slide n°2
+            about me
           </div>
           <div style={styles.slide}>
             Find me at the following links:<br></br>
