@@ -6,6 +6,9 @@ import WanderlyImage from './images/Wanderly.png';
 import SptfydImage from "./images/Sptfyd.png";
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
+import aboutMePic from './images/aboutMe.png';
+import github from './images/github.png';
+import linkedin from './images/linkedin.png';
 
 
 class Portfolio extends Component {
@@ -28,7 +31,6 @@ class Portfolio extends Component {
 
   handleMouseEnter(e) {
     var grid = document.getElementsByClassName(e.target.id)[0];
-    console.log(grid.style);
     grid.style.border = 'solid #E94F37';
     grid.style.boxShadow = '10px 10px 5px grey';
   }
@@ -79,14 +81,21 @@ class Portfolio extends Component {
               ))}
             </GridList>
           </div>
-          <div style={styles.slide}>
-            about me
+
+          <div style={{padding: '10'}}>
+            <br></br>
+            <img style={{alignItems: 'center', margin: 'auto', borderRadius: '50%', height: '400px'}} src={aboutMePic}/>
+            <p style={{color: 'black', width: '70%', margin: 'auto'}}> <br></br>I am an experienced full-stack software engineer specializing in frontend frameworks. My focus has primarily been on building efficient Javascript applications that create beautiful user interfaces and intuitive user flow.
+
+I'm passionate about using new and innovative concepts to solve problems and build comprehensive applications.</p>
           </div>
           <div style={styles.slide}>
-            Find me at the following links:<br></br>
-            <a href="https://www.github.com/gsusko" target="_blank" rel="noopener noreferrer">Github</a>
             <br></br>
-            <a href="https://www.linkedin.com/in/gregsusko/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            Find me at the following links:
+            <br></br>
+            <span style={{float: 'center'}}> <br></br><a href="https://www.github.com/gsusko" target="_blank" rel="noopener noreferrer" style={{marginRight: '20px'}}><img src={github}/></a>
+
+            <a href="https://www.linkedin.com/in/gregsusko/" target="_blank" rel="noopener noreferrer"><img src={linkedin}/></a></span>
           </div>
         </SwipeableViews>
       </div>
