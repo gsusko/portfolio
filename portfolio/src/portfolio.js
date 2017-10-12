@@ -9,6 +9,7 @@ import SwipeableViews from 'react-swipeable-views';
 import aboutMePic from './images/aboutMe.png';
 import github from './images/github.png';
 import linkedin from './images/linkedin.png';
+import mail from './images/mail.png';
 
 class Portfolio extends Component {
   constructor(props) {
@@ -93,9 +94,12 @@ class Portfolio extends Component {
             <br></br>
             Find me at the following links:
             <br></br>
-            <span style={{float: 'center'}}> <br></br><a href="https://www.github.com/gsusko" target="_blank" rel="noopener noreferrer" style={{marginRight: '20px'}}><img src={github}/></a>
-
-            <a href="https://www.linkedin.com/in/gregsusko/" target="_blank" rel="noopener noreferrer"><img src={linkedin}/></a></span>
+            <span style={{float: 'center'}}>
+              <br></br>
+              <a href="https://www.github.com/gsusko" target="_blank" rel="noopener noreferrer" style={{marginRight: '20px'}}><img src={github}/></a>
+              <a href="https://www.linkedin.com/in/gregsusko/" target="_blank" rel="noopener noreferrer" style={{marginRight: '20px'}}><img src={linkedin}/></a>
+              <a href="mailto:gsusko1@gmail.com"><img src={mail}/></a>
+            </span>
           </div>
         </SwipeableViews>
       </div>
