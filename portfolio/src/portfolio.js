@@ -85,8 +85,8 @@ class Portfolio extends Component {
 
           <div style={{padding: '10'}}>
             <br></br>
-            <img style={{alignItems: 'center', margin: 'auto', borderRadius: '50%', height: '400px'}} src={aboutMePic}/>
-            <p style={{color: 'black', width: '70%', margin: 'auto'}}> <br></br>I am an experienced full-stack software engineer specializing in frontend frameworks. My focus has primarily been on building efficient Javascript applications that create beautiful user interfaces and intuitive user flow.
+            <img style={{alignItems: 'center', margin: 'auto', borderRadius: '50%', height: '400px'}} src={aboutMePic} alt=""/>
+            <p style={{color: 'black', width: '70%', margin: 'auto'}}> <br></br>Hi, my name is Greg Susko! I'm an experienced full-stack software engineer specializing in frontend frameworks. My focus has primarily been on building efficient Javascript applications that create beautiful user interfaces and intuitive user flow.
 
             I'm passionate about using new and innovative concepts to solve problems and build comprehensive applications.</p>
           </div>
