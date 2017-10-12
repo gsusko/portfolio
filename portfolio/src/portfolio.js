@@ -96,9 +96,9 @@ class Portfolio extends Component {
             <br></br>
             <span style={{float: 'center'}}>
               <br></br>
-              <a href="https://www.github.com/gsusko" target="_blank" rel="noopener noreferrer" style={{marginRight: '20px'}}><img src={github}/></a>
-              <a href="https://www.linkedin.com/in/gregsusko/" target="_blank" rel="noopener noreferrer" style={{marginRight: '20px'}}><img src={linkedin}/></a>
-              <a href="mailto:gsusko1@gmail.com"><img src={mail}/></a>
+              <a href="https://www.github.com/gsusko" target="_blank" rel="noopener noreferrer" style={{marginRight: '20px'}}><img src={github} alt="Github"/></a>
+              <a href="https://www.linkedin.com/in/gregsusko/" target="_blank" rel="noopener noreferrer" style={{marginRight: '20px'}}><img src={linkedin} alt="LinkedIn"/></a>
+              <a href="mailto:gsusko1@gmail.com"><img src={mail} alt="Email"/></a>
             </span>
           </div>
         </SwipeableViews>
