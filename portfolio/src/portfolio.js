@@ -10,7 +10,6 @@ import aboutMePic from './images/aboutMe.png';
 import github from './images/github.png';
 import linkedin from './images/linkedin.png';
 
-
 class Portfolio extends Component {
   constructor(props) {
     super(props);
@@ -40,6 +39,7 @@ class Portfolio extends Component {
     grid.style.border = 'none';
     grid.style.boxShadow = 'none';
   }
+
   render() {
     const styles = {
       headline: {
@@ -87,7 +87,7 @@ class Portfolio extends Component {
             <img style={{alignItems: 'center', margin: 'auto', borderRadius: '50%', height: '400px'}} src={aboutMePic}/>
             <p style={{color: 'black', width: '70%', margin: 'auto'}}> <br></br>I am an experienced full-stack software engineer specializing in frontend frameworks. My focus has primarily been on building efficient Javascript applications that create beautiful user interfaces and intuitive user flow.
 
-I'm passionate about using new and innovative concepts to solve problems and build comprehensive applications.</p>
+            I'm passionate about using new and innovative concepts to solve problems and build comprehensive applications.</p>
           </div>
           <div style={styles.slide}>
             <br></br>
