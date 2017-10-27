@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
+import RaisedButton from 'material-ui/RaisedButton';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 import ForgottenImage from './images/Forgotten.png';
 import ScheggieXImage from './images/ScheggieX.png';
 import WanderlyImage from './images/Wanderly.png';
@@ -19,7 +22,10 @@ class Portfolio extends Component {
       apps: ['Forgotten', 'ScheggieX', 'Wanderly', "Sptfy'd"],
       images: [ForgottenImage, ScheggieXImage, WanderlyImage, SptfydImage],
       sites: ['http://www.ninjarabbits.com', 'https://scheggie-extension.herokuapp.com/', 'https://travel-destination-planner.herokuapp.com/', 'https://drive.google.com/file/d/0B2rGtmNj3LSndE40cFhSQnFTVHc/view?usp=sharing'],
-      slideIndex: 0
+      slideIndex: 0,
+      open: false,
+      dialogText: '',
+      dialogTitle: ''
     }
 
   }
@@ -42,6 +48,27 @@ class Portfolio extends Component {
     grid.style.boxShadow = 'none';
   }
 
+  handleTouchTap = (event) => {
+    const dialogInfo = {
+      'ABOUT FORGOTTEN': ['Forgotten', `Forgotten is a story and logic-based educational game. \n\nSoftware Engineer using Javascript, ReactJS, and PostgreSQL\n\n- Designed and built dynamically rendering SVG map for a level based game\n- Constructed server-side queries to pass information from a PostgreSQL database to a React based client\n- Improved team’s deployment process by implementing a Heroku Pipeline`],
+      'ABOUT SCHEGGIEX': ['ScheggieX', `A weekly meal planner application for vegetarians\n\nSoftware Engineer using Javascript, ReactJS, MongoDB, and Heroku \n\n- Created a Mongoose multi-word query to obtain more accurate database results for searches\n- Managed application state with Redux to compartmentalize app processes\n- Built drag and drop functionality using HTML5 to efficiently move items between components`],
+      'ABOUT WANDERLY': ['Wanderly', `An all-in-one solution for travel planning\n\nSoftware Engineer using Javascript, MongoDB, and ReactJS\n\n- Built modular front-end components to dynamically render content and allow for future extensibility\n- Optimized Storage and querying with MongoDB \n- Designed user interface using Bootstrap to allow for efficient user flow`],
+      "ABOUT SPTFY'D": ["Sptyf'd", `Spotify Web player utilizing voice commands\n\nProduct Owner using Javascript, ReactJS, Express, and MongoDB\n\n- Integrated voice recognition software in order to implement a hands-free user experience\n- Incorporated Spotify API with Express server to set up a song based search for users`]
+    }
+
+    this.setState({
+      dialogText: dialogInfo[event.target.innerText][1],
+      dialogTitle: dialogInfo[event.target.innerText][0],
+      open: true
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
+
   render() {
     const styles = {
       headline: {
@@ -54,6 +81,13 @@ class Portfolio extends Component {
         padding: 10,
       },
     };
+    const actions = [
+      <FlatButton
+        label="Close"
+        primary={true}
+        onClick={this.handleRequestClose}
+      />
+    ];
 
     return (
       <div>
@@ -83,6 +117,23 @@ class Portfolio extends Component {
                 </GridTile>
               ))}
             </GridList>
+            <div style={{display: 'flex', flexDirection: 'row', margin: '12px'}}>
+              <RaisedButton onClick={this.handleTouchTap} label="About Forgotten" backgroundColor='#256aa8' style={{margin: 'auto'}} labelStyle={{color: 'white', fontWeight: 'bold'}}/>
+              <RaisedButton onClick={this.handleTouchTap} label="About ScheggieX" backgroundColor='#256aa8' style={{margin: 'auto'}} labelStyle={{color: 'white', fontWeight: 'bold'}}/>
+              <RaisedButton onClick={this.handleTouchTap} label="About Wanderly" backgroundColor='#256aa8' style={{margin: 'auto'}} labelStyle={{color: 'white', fontWeight: 'bold'}}/>
+              <RaisedButton onClick={this.handleTouchTap} label="About Sptfy'd" backgroundColor='#256aa8' style={{margin: 'auto'}} labelStyle={{color: 'white', fontWeight: 'bold'}}/>
+            </div>
+            <Dialog
+              title={this.state.dialogTitle}
+              style={{whiteSpace: 'pre-line'}}
+              actions={actions}
+              modal={false}
+              open={this.state.open}
+              onRequestClose={this.handleClose}
+              autoScrollBodyContent={true}
+            >
+              {this.state.dialogText}
+            </Dialog>
           </div>
 
           <div style={{padding: '10'}}>
