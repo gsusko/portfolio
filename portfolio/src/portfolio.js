@@ -10,6 +10,7 @@ import aboutMePic from './images/aboutMe.png';
 import github from './images/github.png';
 import linkedin from './images/linkedin.png';
 import mail from './images/mail.png';
+import './portfolio.css';
 
 class Portfolio extends Component {
   constructor(props) {
@@ -59,10 +60,11 @@ class Portfolio extends Component {
         <Tabs
           onChange={this.handleChange.bind(this)}
           value={this.state.slideIndex}
+          inkBarStyle={{background: '#0a5699'}}
         >
-          <Tab label="Applications" value={0} />
-          <Tab label="About Me" value={1} />
-          <Tab label="Contact" value={2} />
+          <Tab className='tab' label="Applications" value={0} style={{background: '#6398c6'}}/>
+          <Tab className='tab' label="About Me" value={1} style={{background: '#6398c6'}}/>
+          <Tab className='tab' label="Contact" value={2} style={{background: '#6398c6'}}/>
         </Tabs>
         <SwipeableViews
           index={this.state.slideIndex}
@@ -85,20 +87,20 @@ class Portfolio extends Component {
 
           <div style={{padding: '10'}}>
             <br></br>
-            <img style={{alignItems: 'center', margin: 'auto', borderRadius: '50%', height: '400px'}} src={aboutMePic} alt=""/>
-            <p style={{color: 'black', width: '70%', margin: 'auto'}}> <br></br>Hi, my name is Greg Susko! I'm an experienced full-stack software engineer specializing in frontend frameworks. My focus has primarily been on building efficient Javascript applications that create beautiful user interfaces and intuitive user flow.
+            <img style={{alignItems: 'center', margin: 'auto', borderRadius: '50%', height: '400px', boxShadow: '5px 5px 5px 0px rgba(0,0,0,0.75)'}} src={aboutMePic} alt=""/>
+            <p style={{color: 'white', width: '70%', margin: 'auto'}}> <br></br><b>Hi, my name is Greg Susko! I'm an experienced full-stack software engineer specializing in frontend frameworks. My focus has primarily been on building efficient Javascript applications that create beautiful user interfaces and intuitive user flow.
 
-            I'm passionate about using new and innovative concepts to solve problems and build comprehensive applications.</p>
+            I'm passionate about using new and innovative concepts to solve problems and build comprehensive applications.</b></p>
           </div>
           <div style={styles.slide}>
             <br></br>
-            Find me at the following links:
+            <p style={{color: 'black', fontSize: '20px'}}><b>Find me at the following links:</b></p>
             <br></br>
             <span style={{float: 'center'}}>
               <br></br>
-              <a href="https://www.github.com/gsusko" target="_blank" rel="noopener noreferrer" style={{marginRight: '20px'}}><img src={github} alt="Github"/></a>
-              <a href="https://www.linkedin.com/in/gregsusko/" target="_blank" rel="noopener noreferrer" style={{marginRight: '20px'}}><img src={linkedin} alt="LinkedIn"/></a>
-              <a href="mailto:gsusko1@gmail.com"><img src={mail} alt="Email"/></a>
+              <a href="https://www.github.com/gsusko" target="_blank" rel="noopener noreferrer" style={{marginRight: '80px'}}><img className="contactImage" style={{height: '180px'}} src={github} alt="Github"/></a>
+              <a href="https://www.linkedin.com/in/gregsusko/" target="_blank" rel="noopener noreferrer" style={{marginRight: '80px'}}><img className="contactImage" style={{height: '180px'}} src={linkedin} alt="LinkedIn"/></a>
+              <a href="mailto:gsusko1@gmail.com"><img className="contactImage" style={{height: '180px'}} src={mail} alt="Email"/></a>
             </span>
           </div>
         </SwipeableViews>
