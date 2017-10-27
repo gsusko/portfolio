@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 import ForgottenImage from './images/Forgotten.png';
 import ScheggieXImage from './images/ScheggieX.png';
 import WanderlyImage from './images/Wanderly.png';
@@ -13,7 +12,7 @@ import aboutMePic from './images/aboutMe.png';
 import github from './images/github.png';
 import linkedin from './images/linkedin.png';
 import mail from './images/mail.png';
-import './portfolio.css';
+import style from './portfolio.css';
 
 class Portfolio extends Component {
   constructor(props) {
@@ -50,10 +49,10 @@ class Portfolio extends Component {
 
   handleTouchTap = (event) => {
     const dialogInfo = {
-      'ABOUT FORGOTTEN': ['Forgotten', `Forgotten is a story and logic-based educational game. \n\nSoftware Engineer using Javascript, ReactJS, and PostgreSQL\n\n- Designed and built dynamically rendering SVG map for a level based game\n- Constructed server-side queries to pass information from a PostgreSQL database to a React based client\n- Improved team’s deployment process by implementing a Heroku Pipeline`],
-      'ABOUT SCHEGGIEX': ['ScheggieX', `A weekly meal planner application for vegetarians\n\nSoftware Engineer using Javascript, ReactJS, MongoDB, and Heroku \n\n- Created a Mongoose multi-word query to obtain more accurate database results for searches\n- Managed application state with Redux to compartmentalize app processes\n- Built drag and drop functionality using HTML5 to efficiently move items between components`],
-      'ABOUT WANDERLY': ['Wanderly', `An all-in-one solution for travel planning\n\nSoftware Engineer using Javascript, MongoDB, and ReactJS\n\n- Built modular front-end components to dynamically render content and allow for future extensibility\n- Optimized Storage and querying with MongoDB \n- Designed user interface using Bootstrap to allow for efficient user flow`],
-      "ABOUT SPTFY'D": ["Sptyf'd", `A Spotify web player utilizing voice commands\n\nProduct Owner using Javascript, ReactJS, Express, and MongoDB\n\n- Integrated voice recognition software in order to implement a hands-free user experience\n- Incorporated Spotify API with Express server to set up a song based search for users`]
+      'ABOUT FORGOTTEN': ['Forgotten', <span><i><b>Forgotten is a story and logic-based educational game</b></i> <br></br><br></br><b>Role:</b><br></br>Software Engineer using Javascript, ReactJS, and PostgreSQL<br></br><br></br><b>Contributions:</b><br></br>- Designed and built dynamically rendering SVG map for a level based game<br></br>- Constructed server-side queries to pass information from a PostgreSQL database to a React based client<br></br>- Improved team’s deployment process by implementing a Heroku Pipeline</span>],
+      'ABOUT SCHEGGIEX': ['ScheggieX', <span><i><b>A weekly meal planner application for vegetarians</b></i><br></br><br></br><b>Role:</b><br></br>Software Engineer using Javascript, ReactJS, MongoDB, and Heroku<br></br><br></br><b>Contributions:</b><br></br>- Created a Mongoose multi-word query to obtain more accurate database results for searches<br></br>- Managed application state with Redux to compartmentalize app processes<br></br>- Built drag and drop functionality using HTML5 to efficiently move items between components</span>],
+      'ABOUT WANDERLY': ['Wanderly', <span><i><b>An all-in-one solution for travel planning</b></i><br></br><br></br><b>Role:</b><br></br>Software Engineer using Javascript, MongoDB, and ReactJS<br></br><br></br><b>Contributions:</b><br></br>- Built modular front-end components to dynamically render content and allow for future extensibility<br></br>- Optimized Storage and querying with MongoDB<br></br>- Designed user interface using Bootstrap to allow for efficient user flow</span>],
+      "ABOUT SPTFY'D": ["Sptyf'd", <span><i><b>A Spotify web player utilizing voice commands</b></i><br></br><br></br><b>Role:</b><br></br>Product Owner using Javascript, ReactJS, Express, and MongoDB<br></br><br></br><b>Contributions:</b><br></br>- Integrated voice recognition software in order to implement a hands-free user experience<br></br>- Incorporated Spotify API with Express server to set up a song based search for users</span>]
     }
 
     this.setState({
@@ -82,9 +81,11 @@ class Portfolio extends Component {
       },
     };
     const actions = [
-      <FlatButton
+      <RaisedButton
         label="Close"
-        primary={true}
+        backgroundColor='#256aa8'
+        style={{background: '#256aa8'}}
+        labelStyle={{color: 'white'}}
         onClick={this.handleRequestClose}
       />
     ];
@@ -124,8 +125,17 @@ class Portfolio extends Component {
               <RaisedButton onClick={this.handleTouchTap} label="About Sptfy'd" backgroundColor='#256aa8' style={{margin: 'auto'}} labelStyle={{color: 'white', fontWeight: 'bold'}}/>
             </div>
             <Dialog
+              contentStyle={{
+                borderRadius: '20px',
+                overflow: 'auto',
+                backgroundColor: 'blue !important'
+              }}
               title={this.state.dialogTitle}
+              titleStyle={{backgroundColor: '#bccce5', textAlign: 'center', fontStyle: 'italic', fontWeight: 'bold', fontFamily: 'sans-serif'}}
+              bodyStyle={{backgroundColor: '#bccce5', fontFamily: 'sans-serif'}}
+              actionsContainerStyle={{backgroundColor: '#bccce5', fontFamily: 'sans-serif'}}
               style={{whiteSpace: 'pre-line'}}
+              paperClassName={style.about}
               actions={actions}
               modal={false}
               open={this.state.open}
