@@ -4,4 +4,5 @@ body {
   font-family: sans-serif;
   background-image: url('./compBackground.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }

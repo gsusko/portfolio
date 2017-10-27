@@ -71,7 +71,7 @@ class Portfolio extends Component {
           onChangeIndex={this.handleChange.bind(this)}
         >
           <div>
-            <GridList style={{paddingTop: '10px'}} cellHeight={600} cols={4}>
+            <GridList  cellHeight={600} cols={4}>
               {this.state.apps.map((app, id) => (
                 <GridTile
                   className={app}
