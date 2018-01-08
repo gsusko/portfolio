@@ -5,7 +5,7 @@ import Dialog from 'material-ui/Dialog';
 import ForgottenImage from './images/Forgotten.png';
 import ScheggieXImage from './images/ScheggieX.png';
 import WanderlyImage from './images/Wanderly.png';
-import SptfydImage from "./images/Sptfyd.png";
+import PhotoSwipeImage from "./images/PhotoSwipe.png";
 import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 import aboutMePic from './images/aboutMe.png';
@@ -18,9 +18,9 @@ class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      apps: ['Forgotten', 'ScheggieX', 'Wanderly', "Sptfy'd"],
-      images: [ForgottenImage, ScheggieXImage, WanderlyImage, SptfydImage],
-      sites: ['http://www.ninjarabbits.com', 'https://scheggie-extension.herokuapp.com/', 'https://travel-destination-planner.herokuapp.com/', 'https://drive.google.com/file/d/0B2rGtmNj3LSndE40cFhSQnFTVHc/view?usp=sharing'],
+      apps: ['Forgotten', 'PhotoSwipe', 'ScheggieX', 'Wanderly'],
+      images: [ForgottenImage, PhotoSwipeImage, ScheggieXImage, WanderlyImage],
+      sites: ['http://www.ninjarabbits.com', 'https://drive.google.com/file/d/11kCTE-5ySh2HgzVkZemNJcBfJ31HPt_x/view?usp=sharing', 'https://scheggie-extension.herokuapp.com/', 'https://travel-destination-planner.herokuapp.com/'],
       slideIndex: 0,
       open: false,
       dialogText: '',
@@ -52,7 +52,7 @@ class Portfolio extends Component {
       'ABOUT FORGOTTEN': ['Forgotten', <span><i><b>Forgotten is a story and logic-based educational game</b></i> <br></br><br></br><b>Role:</b><br></br>Software Engineer using Javascript, ReactJS, and PostgreSQL<br></br><br></br><b>Contributions:</b><br></br>- Designed and built dynamically rendering SVG map for a level based game<br></br>- Constructed server-side queries to pass information from a PostgreSQL database to a React based client<br></br>- Improved team’s deployment process by implementing a Heroku Pipeline</span>],
       'ABOUT SCHEGGIEX': ['ScheggieX', <span><i><b>A weekly meal planner application for vegetarians</b></i><br></br><br></br><b>Role:</b><br></br>Software Engineer using Javascript, ReactJS, MongoDB, and Heroku<br></br><br></br><b>Contributions:</b><br></br>- Created a Mongoose multi-word query to obtain more accurate database results for searches<br></br>- Managed application state with Redux to compartmentalize app processes<br></br>- Built drag and drop functionality using HTML5 to efficiently move items between components</span>],
       'ABOUT WANDERLY': ['Wanderly', <span><i><b>An all-in-one solution for travel planning</b></i><br></br><br></br><b>Role:</b><br></br>Software Engineer using Javascript, MongoDB, and ReactJS<br></br><br></br><b>Contributions:</b><br></br>- Built modular front-end components to dynamically render content and allow for future extensibility<br></br>- Optimized Storage and querying with MongoDB<br></br>- Designed user interface using Bootstrap to allow for efficient user flow</span>],
-      "ABOUT SPTFY'D": ["Sptyf'd", <span><i><b>A Spotify web player utilizing voice commands</b></i><br></br><br></br><b>Role:</b><br></br>Product Owner using Javascript, ReactJS, Express, and MongoDB<br></br><br></br><b>Contributions:</b><br></br>- Integrated voice recognition software in order to implement a hands-free user experience<br></br>- Incorporated Spotify API with Express server to set up a song based search for users</span>]
+      'ABOUT PHOTOSWIPE': ['PhotoSwipe', <span><i><b>A React Native photo app with a swipe-to-like feature</b></i><br></br><br></br><b>Role:</b><br></br>Product Owner using Javascript, React Native, and Redux<br></br><br></br><b>Contributions:</b><br></br>- Built reusable, swipeable cards to create card rotation and movement with React Native’s PanResponder<br></br>- Incorporated Flickr API to implement a location and text-based search<br></br>- Leveraged Redux to structure application state in an efficient and logical manner</span>]
     }
 
     this.setState({
@@ -120,9 +120,9 @@ class Portfolio extends Component {
             </GridList>
             <div style={{display: 'flex', flexDirection: 'row', margin: '12px'}}>
               <RaisedButton onClick={this.handleTouchTap} label="About Forgotten" backgroundColor='#256aa8' style={{margin: 'auto'}} labelStyle={{color: 'white', fontWeight: 'bold'}}/>
+              <RaisedButton onClick={this.handleTouchTap} label="About PhotoSwipe" backgroundColor='#256aa8' style={{margin: 'auto'}} labelStyle={{color: 'white', fontWeight: 'bold'}}/>
               <RaisedButton onClick={this.handleTouchTap} label="About ScheggieX" backgroundColor='#256aa8' style={{margin: 'auto'}} labelStyle={{color: 'white', fontWeight: 'bold'}}/>
               <RaisedButton onClick={this.handleTouchTap} label="About Wanderly" backgroundColor='#256aa8' style={{margin: 'auto'}} labelStyle={{color: 'white', fontWeight: 'bold'}}/>
-              <RaisedButton onClick={this.handleTouchTap} label="About Sptfy'd" backgroundColor='#256aa8' style={{margin: 'auto'}} labelStyle={{color: 'white', fontWeight: 'bold'}}/>
             </div>
             <Dialog
               contentStyle={{
